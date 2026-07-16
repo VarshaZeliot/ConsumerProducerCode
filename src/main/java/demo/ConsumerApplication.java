@@ -40,10 +40,14 @@ public class ConsumerApplication {
 
         consumer.subscribe(Collections.singletonList(topic));
 
+        System.out.println("Consumer subscribed to topic : " + topic);
+
         while (true) {
 
             ConsumerRecords<String, String> records =
                     consumer.poll(Duration.ofMillis(1000));
+
+            System.out.println("Records received = " + records.count());
 
             for (ConsumerRecord<String, String> record : records) {
 

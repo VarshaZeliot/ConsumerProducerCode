@@ -25,7 +25,6 @@ public class MainApplication {
             }
         });
 
-        producerThread.start();
         consumerThread.start();
         producerThread.start();
     }
