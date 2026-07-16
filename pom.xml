@@ -20,7 +20,7 @@
             <configuration>
                 <archive>
                     <manifest>
-                        <mainClass>com.condense.KafkaConsumerService</mainClass>
+                        <mainClass>com.condense.MainApplication</mainClass>
                     </manifest>
                 </archive>
             </configuration>
