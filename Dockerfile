@@ -10,6 +10,6 @@ FROM eclipse-temurin:21-jre
 
 WORKDIR /app
 
-COPY --from=build /app/target/kafka-demo.jar app.jar
+COPY --from=build /app/target/kafka-demo-1.0.jar app.jar
 
 ENTRYPOINT ["java","-jar","app.jar"]
