@@ -9,7 +9,7 @@
     <artifactId>kafka-demo</artifactId>
     <version>1.0</version>
 
-         <build>
+        <build>
     <finalName>kafka-demo</finalName>
 
     <plugins>
@@ -17,10 +17,11 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-jar-plugin</artifactId>
             <version>3.4.2</version>
+
             <configuration>
                 <archive>
                     <manifest>
-                        <mainClass>com.condense.MainApplication</mainClass>
+                        <mainClass>demo.MainApplication</mainClass>
                     </manifest>
                 </archive>
             </configuration>
