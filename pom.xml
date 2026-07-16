@@ -33,45 +33,30 @@
 
 <build>
 
-    <finalName>kafka-demo</finalName>
-
     <plugins>
 
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-jar-plugin</artifactId>
-            <version>3.4.2</version>
+            <artifactId>maven-shade-plugin</artifactId>
+            <version>3.5.3</version>
 
             <executions>
                 <execution>
-                    <id>make-jar-executable</id>
                     <phase>package</phase>
                     <goals>
-                        <goal>jar</goal>
+                        <goal>shade</goal>
                     </goals>
+
+                    <configuration>
+                        <transformers>
+                            <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                <mainClass>demo.MainApplication</mainClass>
+                            </transformer>
+                        </transformers>
+                    </configuration>
+
                 </execution>
             </executions>
-
-            <configuration>
-                <archive>
-                    <manifest>
-                        <mainClass>demo.MainApplication</mainClass>
-                    </manifest>
-                </archive>
-            </configuration>
-
-        </plugin>
-
-
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>3.13.0</version>
-
-            <configuration>
-                <source>21</source>
-                <target>21</target>
-            </configuration>
 
         </plugin>
 
