@@ -8,6 +8,7 @@ public class MainApplication {
         ConsumerApplication consumer = new ConsumerApplication();
 
         Thread producerThread = new Thread(() -> {
+            System.out.println("Producer Thread Started");
             try {
                 producer.startProducer();
             } catch (Exception e) {
