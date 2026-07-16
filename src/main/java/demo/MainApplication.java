@@ -17,7 +17,12 @@ public class MainApplication {
         });
 
         Thread consumerThread = new Thread(() -> {
-            consumer.startConsumer();
+            System.out.println("Consumer Thread Started");
+            try {
+                consumer.startConsumer();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         });
 
         producerThread.start();
