@@ -39,7 +39,7 @@ public class ConsumerApplication {
 
         properties.put(
                 ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG,
-                "localhost:9092");
+                bootstrapServers);
 
         properties.put(
                 ConsumerConfig.GROUP_ID_CONFIG,
