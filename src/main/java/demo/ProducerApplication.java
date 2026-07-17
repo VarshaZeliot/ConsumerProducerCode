@@ -34,8 +34,8 @@ public class ProducerApplication {
 
             String message = "Order-" + count;
 
-                ProducerRecord<String, String> record =
-                        new ProducerRecord<>(topic, message);
+            ProducerRecord<String, String> record =
+                    new ProducerRecord<>(topic, message);
 
                 producer.send(record).get();
 
