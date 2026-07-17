@@ -21,7 +21,7 @@ public class ConsumerApplication {
 
         properties.put(
                 ConsumerConfig.GROUP_ID_CONFIG,
-                "demo-group");
+                "demo-group-1");
 
         properties.put(
                 ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG,
