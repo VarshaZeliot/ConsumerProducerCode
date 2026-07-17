@@ -37,7 +37,7 @@ public class ProducerApplication {
             ProducerRecord<String, String> record =
                     new ProducerRecord<>(topic, message);
 
-                producer.send(record).get();
+            producer.send(record).get();
 
                 producer.flush();
 
