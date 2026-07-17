@@ -57,6 +57,27 @@ public class ConsumerApplication {
                 ConsumerConfig.AUTO_OFFSET_RESET_CONFIG,
                 "earliest");
 
+        // SASL Configuration
+        properties.put(
+                CommonClientConfigs.SECURITY_PROTOCOL_CONFIG,
+                saslProtocol);
+
+        properties.put(
+                SaslConfigs.SASL_MECHANISM,
+                saslMechanism);
+
+        properties.put(
+                "ssl.enabled.protocols",
+                saslTlsVersion);
+
+        properties.put(
+                SaslConfigs.SASL_JAAS_CONFIG,
+                "org.apache.kafka.common.security.scram.ScramLoginModule required username=\""
+                        + saslUsername
+                        + "\" password=\""
+                        + saslPassword
+                        + "\";");
+
         KafkaConsumer<String, String> consumer =
                 new KafkaConsumer<>(properties);
 
