@@ -84,6 +84,8 @@ public class ConsumerApplication {
         consumer.subscribe(Collections.singletonList(topic));
 
         System.out.println("Consumer subscribed to topic : " + topic);
+        System.out.println("Kafka Broker : " + bootstrapServers);
+        System.out.println("Consumer Group : " + consumerGroup);
 
         while (true) {
 
