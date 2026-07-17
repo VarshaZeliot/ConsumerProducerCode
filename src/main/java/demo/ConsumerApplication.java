@@ -11,7 +11,29 @@ public class ConsumerApplication {
 
     public void startConsumer() {
 
-        String topic = "orders";
+        Properties config = new Properties();
+
+        try (InputStream input = getClass().getClassLoader().getResourceAsStream("config.properties")) {
+
+            if (input == null) {
+                throw new RuntimeException("config.properties file not found");
+            }
+
+            config.load(input);
+
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to load config.properties", e);
+        }
+
+        String bootstrapServers = config.getProperty("BOOTSTRAP_SERVERS", "localhost:9092");
+        String topic = config.getProperty("TOPIC_NAME", "orders");
+        String consumerGroup = config.getProperty("CONSUMER_GROUP", "demo-group");
+
+        String saslProtocol = config.getProperty("SECURITY_PROTOCOL");
+        String saslMechanism = config.getProperty("SASL_MECHANISM");
+        String saslUsername = config.getProperty("SASL_USERNAME");
+        String saslPassword = config.getProperty("SASL_PASSWORD");
+        String saslTlsVersion = config.getProperty("SSL_ENABLED_PROTOCOLS");
 
         Properties properties = new Properties();
 
