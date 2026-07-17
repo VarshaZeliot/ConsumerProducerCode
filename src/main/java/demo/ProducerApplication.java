@@ -41,7 +41,7 @@ public class ProducerApplication {
 
                 producer.flush();
 
-            System.out.println("Producer Sent : " + message);
+                System.out.println("Producer Sent : " + message);
 
             count++;
 
