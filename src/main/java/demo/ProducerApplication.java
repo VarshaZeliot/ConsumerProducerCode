@@ -39,7 +39,7 @@ public class ProducerApplication {
 
             producer.send(record).get();
 
-                producer.flush();
+            producer.flush();
 
             System.out.println("Producer Sent : " + message);
 
